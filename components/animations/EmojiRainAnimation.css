@@ -1,0 +1,37 @@
+.emoji-rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.emoji {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
+  color: #000;
+  animation-name: fall, fadeOut;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-duration: 3s, 2s; /* Total duration is 5 seconds */
+  animation-delay: 0s, 3s; /* Delay fadeOut to start after fall */
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2; /* Changed from 0 to 0.2 */
+  }
+}
